@@ -4,9 +4,13 @@
              xmlns:local="clr-namespace:XFSuiviMICI"
              x:Class="XFSuiviMICI.MainPage">
 
-    <local:TrendPage Title="Trend"/>
-    <local:DailyReportPage Title="Daily"/>
-    <local:TreatmentPage Title="Profile"/>
-    <local:LabWorkPage Title="Labwork"/>
+    <local:TrendPage Title="Stats"
+                     IconImageSource="chart.png"/>
+    <local:DailyReportPage Title="Journal"
+                           IconImageSource="article.png"/>
+    <local:TreatmentPage Title="Medocs"
+                         IconImageSource="pills.png"/>
+    <local:LabWorkPage Title="Bio"
+                       IconImageSource="biotech.png"/>
 
 </TabbedPage>
