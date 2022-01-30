@@ -16,5 +16,10 @@ namespace XFSuiviMICI
         {
             InitializeComponent();
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            DisplayAlert("", "Mise à jour effectuée", "OK");
+        }
     }
 }

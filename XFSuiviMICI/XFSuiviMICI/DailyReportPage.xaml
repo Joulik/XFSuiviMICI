@@ -3,10 +3,41 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XFSuiviMICI.DailyReportPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
+        <!--<StackLayout>
+            <Label Text="Journal des saisies"
                 HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        </StackLayout>-->
+
+        <Grid>
+            <!--<ListView Grid.Column="0" Grid.Row="0"
+                  x:Name="MainListView" 
+                  HasUnevenRows="True" 
+                  VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand"
+                  ItemTapped="MainListView_ItemTapped" 
+                  SeparatorColor="DarkGray">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell ImageSource="{Binding Image}" 
+                               Text="{Binding Name}" 
+                               TextColor="Black" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            <Image Grid.Column="0" Grid.Row="0"
+               Source="add_green.png"
+               HorizontalOptions="Center"
+               VerticalOptions="EndAndExpand"
+               Margin="0,0,0,0"
+               HeightRequest="96"
+               WidthRequest="96" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    <!--Command="{Binding clickNewCard}"
+                  CommandParameter="3"-->
+                </Image.GestureRecognizers>
+            </Image>
+        </Grid>
+
     </ContentPage.Content>
 </ContentPage>
