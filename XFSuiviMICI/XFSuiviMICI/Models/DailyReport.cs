@@ -16,6 +16,6 @@ namespace XFSuiviMICI.Models
         public bool HavingDiarrhea { get; set; }
         public int HeartRate { get; set; }
         public int Systolic { get; set; }
-        public int Tiredness { get; set; }
+        public bool Tiredness { get; set; }
     }
 }
