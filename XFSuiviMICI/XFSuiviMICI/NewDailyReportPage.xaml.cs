@@ -10,17 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace XFSuiviMICI
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DailyReportPage : ContentPage
+    public partial class NewDailyReportPage : ContentPage
     {
-        public DailyReportPage()
+        public NewDailyReportPage()
         {
             InitializeComponent();
-        }
-
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
-        {
-            Navigation.PushAsync(new NewDailyReportPage());
-            DisplayAlert("", "Mise à jour effectuée", "OK");
         }
     }
 }
