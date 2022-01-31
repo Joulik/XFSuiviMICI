@@ -16,32 +16,40 @@
 
             <!--Weight-->
             <Label Text="Poids (kg)"
-                       Margin="25,0,0,0"
-                       FontSize="Large"/>
-            <Entry x:Name="weight"
-                       Keyboard="Numeric"
-                       Margin="25,0,0,0"
-                       FontSize="Large"/>
-
-            <!--BowelMouvement-->
-            <Label Text="Nombre de selles"
                    Margin="25,0,0,0"
                    FontSize="Large"/>
+            <Entry x:Name="weight"
+                   Keyboard="Numeric"
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
+
+            <!--BowelMouvement-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Nombre de selles"
+                   Margin="25,0,30,0"
+                   FontSize="Large"/>
+                <Label x:Name="countBowelMovement" 
+                       Text="0"
+                       FontSize="Large"/>
+            </StackLayout>
             <Stepper Minimum="0"
                      Maximum="30"
                      Increment="1"
-                     HorizontalOptions="Center"/>
-            <!--ValueChanged="OnStepperValueChanged"-->
+                     HorizontalOptions="Center"
+                     ValueChanged="OnStepperValueChanged" />
 
             <!--Diahrrea-->
             <StackLayout Orientation="Horizontal">
                 <Label Text="Diarrhée"
                        Margin="25,0,0,0"
                        FontSize="Large"/>
-                <Switch OnColor="#ff6868"
+                <Switch x:Name="switchDiarrhea"
+                        OnColor="#ff6868"
                         Margin="50,0,0,0"
-                        IsToggled="False"/>
-                <Label Text="non"
+                        IsToggled="False"
+                        Toggled="SwitchDiarrheaToggled"/>
+                <Label x:Name="labelDiarrhea"
+                       Text="non"
                        Margin="0,5,0,0"/>
             </StackLayout>
             
@@ -83,30 +91,30 @@
 
             <!--HeartRate-->
             <Label Text="Fréquence cardiaque (BPM)"
-                       Margin="25,0,0,0"
-                       FontSize="Large"/>
-            <Entry x:Name="weight"
-                       Keyboard="Numeric"
-                       Margin="25,0,0,0"
-                       FontSize="Large"/>
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
+            <Entry x:Name="heartRate"
+                   Keyboard="Numeric"
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
 
             <!--Systolic-->
             <Label Text="Pression systolique (mmHg)"
-                       Margin="25,0,0,0"
-                       FontSize="Large"/>
-            <Entry x:Name="weight"
-                       Keyboard="Numeric"
-                       Margin="25,0,0,0"
-                       FontSize="Large"/>
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
+            <Entry x:Name="systolic"
+                   Keyboard="Numeric"
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
 
             <!--Diastolic-->
             <Label Text="Pression diastolique (mmHg)"
-                       Margin="25,0,0,0"
-                       FontSize="Large"/>
-            <Entry x:Name="weight"
-                       Keyboard="Numeric"
-                       Margin="25,0,0,0"
-                       FontSize="Large"/>
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
+            <Entry x:Name="diastolic"
+                   Keyboard="Numeric"
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
 
         </StackLayout>
     </ContentPage.Content>

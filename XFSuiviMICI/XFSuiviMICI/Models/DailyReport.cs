@@ -10,7 +10,7 @@ namespace XFSuiviMICI.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public bool BloodOrMucus { get; set; }
-        public int BowelMouvement { get; set; }
+        public int BowelMovement { get; set; }
         public DateTime Date { get; set; }
         public int Diastolic { get; set; }
         public bool AbdominalPain { get; set; }

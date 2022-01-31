@@ -20,7 +20,7 @@ namespace XFSuiviMICI
         private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             Navigation.PushAsync(new NewDailyReportPage());
-            DisplayAlert("", "Mise à jour effectuée", "OK");
+            //DisplayAlert("", "Mise à jour effectuée", "OK");
         }
     }
 }

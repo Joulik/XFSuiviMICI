@@ -16,5 +16,27 @@ namespace XFSuiviMICI
         {
             InitializeComponent();
         }
+
+        private void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            double value = e.NewValue;
+            
+            countBowelMovement.Text = string.Format("{0}", value);
+        }
+
+        private void SwitchDiarrheaToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                labelDiarrhea.TextColor = Color.Red;
+                labelDiarrhea.Text = "oui";
+            }
+            else
+            {
+                labelDiarrhea.TextColor = Color.Gray;
+                labelDiarrhea.Text = "non";
+            }
+                
+        }
     }
 }
