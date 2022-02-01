@@ -10,7 +10,7 @@
             <Label Text="Date"
                    Margin="25,0,0,0"
                    FontSize="Large"/>
-            <DatePicker x:Name="datePickedLabWork"
+            <DatePicker x:Name="dateLabWorkPicked"
                         Format="dd/MM/yyyy"
                         FontSize="Large"
                         Margin="30,0,0,0"/>

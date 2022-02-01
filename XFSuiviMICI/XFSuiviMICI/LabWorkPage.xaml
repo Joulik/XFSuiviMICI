@@ -5,6 +5,15 @@
     <ContentPage.Content>
 
         <Grid>
+            
+            <ListView x:Name="labWorkListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding TestName }"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
             <Image Grid.Column="0" Grid.Row="0"
                Source="add_green.png"
                HorizontalOptions="Center"

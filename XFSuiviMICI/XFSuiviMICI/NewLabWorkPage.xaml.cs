@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using XFSuiviMICI.Models;
 
 namespace XFSuiviMICI
 {
@@ -19,7 +21,25 @@ namespace XFSuiviMICI
 
         private void OnButtonLabWorkClicked(object sender, EventArgs e)
         {
-            //DisplayAlert("", "Sauvegarde effectuée", "OK");
+            LabWork labWork = new LabWork
+            {
+                DateLabWork = dateLabWorkPicked.Date,
+                TestName = testName.Text,
+                TestValue = Convert.ToInt32(testValue.Text),
+                TestUnit = testUnit.Text,
+            };
+
+            SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);
+
+            conn.CreateTable<LabWork>();
+            int rows = conn.Insert(labWork);
+            conn.Close();
+
+            if (rows > 0)
+                DisplayAlert("", "Sauvegarde effectuée", "OK");
+            else
+                DisplayAlert("Problème", "Sauvegarde non enregistré", "OK");
+
             Navigation.PopAsync();
         }
     }

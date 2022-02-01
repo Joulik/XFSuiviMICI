@@ -11,7 +11,7 @@
             <Label Text="Date"
                    Margin="25,0,0,0"
                    FontSize="Large"/>
-            <DatePicker x:Name="datePicked"
+            <DatePicker x:Name="dateDailyPicked"
                         Format="dd/MM/yyyy"
                         FontSize="Large"
                         Margin="30,0,0,0"/>
