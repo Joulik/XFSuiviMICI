@@ -16,5 +16,10 @@ namespace XFSuiviMICI
         {
             InitializeComponent();
         }
+
+        private void LabTapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new NewLabWorkPage());
+        }
     }
 }

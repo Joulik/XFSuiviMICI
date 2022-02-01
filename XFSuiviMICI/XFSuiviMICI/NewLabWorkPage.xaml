@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFSuiviMICI.NewLabWorkPage">
+    <ContentPage.Content>
+
+        <StackLayout>
+
+            <!--Date-->
+            <Label Text="Date"
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
+            <DatePicker x:Name="datePickedLabWork"
+                        Format="dd/MM/yyyy"
+                        FontSize="Large"
+                        Margin="30,0,0,0"/>
+
+            <!--Test Name-->
+            <Label Text="Substance testée"
+                   Margin="25,25,0,0"
+                   FontSize="Large"/>
+            <Entry x:Name="testName"
+                   Margin="25,0,0,0"
+                   FontSize="Large"
+                   Placeholder="Ex. CRP, Ferritine..."/>
+           
+            <!--Test Value-->
+            <Label Text="Valeur"
+                   Margin="25,25,0,0"
+                   FontSize="Large"/>
+            <Entry x:Name="testValue"
+                   Margin="25,0,0,0"
+                   FontSize="Large"
+                   Keyboard="Numeric"/>
+            
+            <!--Test Unit-->
+            <Label Text="Unité du dosage"
+                   Margin="25,25,0,0"
+                   FontSize="Large"/>
+            <Entry x:Name="testUnit"
+                   Margin="25,0,0,0"
+                   FontSize="Large"
+                   Placeholder="Ex. mg/l, μg/l..."/>
+           
+            <Button Margin="0,25,0,10"
+                    Text="Enregistrer"
+                    FontSize="Medium"
+                    VerticalOptions="EndAndExpand"
+                    Clicked="OnButtonLabWorkClicked"/>
+            
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

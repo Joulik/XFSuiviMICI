@@ -10,17 +10,17 @@ using Xamarin.Forms.Xaml;
 namespace XFSuiviMICI
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DailyReportPage : ContentPage
+    public partial class NewLabWorkPage : ContentPage
     {
-        public DailyReportPage()
+        public NewLabWorkPage()
         {
             InitializeComponent();
         }
 
-        private void DailyTapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private void OnButtonLabWorkClicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new NewDailyReportPage());
-            //DisplayAlert("", "Mise à jour effectuée", "OK");
+            //DisplayAlert("", "Sauvegarde effectuée", "OK");
+            Navigation.PopAsync();
         }
     }
 }

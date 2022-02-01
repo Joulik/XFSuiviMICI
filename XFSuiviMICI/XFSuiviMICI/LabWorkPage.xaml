@@ -3,10 +3,23 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XFSuiviMICI.LabWorkPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Prises de sang et suivi biologique"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+        <Grid>
+            <Image Grid.Column="0" Grid.Row="0"
+               Source="add_green.png"
+               HorizontalOptions="Center"
+               VerticalOptions="EndAndExpand"
+               Margin="0,0,0,0"
+               HeightRequest="96"
+               WidthRequest="96" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="LabTapGestureRecognizer_Tapped" />
+                    <!--Command="{Binding clickNewCard}"
+                  CommandParameter="3"-->
+                </Image.GestureRecognizers>
+            </Image>
+            
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

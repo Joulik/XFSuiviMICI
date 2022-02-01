@@ -32,7 +32,7 @@
                HeightRequest="96"
                WidthRequest="96" >
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    <TapGestureRecognizer Tapped="DailyTapGestureRecognizer_Tapped" />
                     <!--Command="{Binding clickNewCard}"
                   CommandParameter="3"-->
                 </Image.GestureRecognizers>

@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="XFSuiviMICI.NewDailyReportPage">
     <ContentPage.Content>
-        <StackLayout>
+        <ScrollView>
+
+            <StackLayout>
             
             <!--Date-->
             <Label Text="Date"
@@ -123,6 +125,16 @@
                    Margin="25,0,0,0"
                    FontSize="Large"/>
 
-        </StackLayout>
+            <!--Save Button-->
+            <Button Margin="0,25,0,10"
+                    Text="Enregistrer"
+                    FontSize="Medium"
+                    VerticalOptions="End"
+                    Clicked="OnButtonNewDailyClicked"/>
+
+            </StackLayout>
+
+        </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>
