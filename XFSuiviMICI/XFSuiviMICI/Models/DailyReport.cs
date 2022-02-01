@@ -8,7 +8,7 @@ namespace XFSuiviMICI.Models
     public class DailyReport
     {
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int DailyReportId { get; set; }
         public bool BloodOrMucus { get; set; }
         public int BowelMovement { get; set; }
         public DateTime Date { get; set; }
