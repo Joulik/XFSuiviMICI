@@ -35,8 +35,49 @@ namespace XFSuiviMICI
             {
                 labelDiarrhea.TextColor = Color.Gray;
                 labelDiarrhea.Text = "non";
+            }   
+        }
+
+        private void SwitchBloodMucusToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                labelBloodMucus.TextColor = Color.Red;
+                labelBloodMucus.Text = "oui";
             }
-                
+            else
+            {
+                labelBloodMucus.TextColor = Color.Gray;
+                labelBloodMucus.Text = "non";
+            }
+        }
+
+        private void SwitchAbdominalPainToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                labelAbdominalPain.TextColor = Color.Red;
+                labelAbdominalPain.Text = "oui";
+            }
+            else
+            {
+                labelAbdominalPain.TextColor = Color.Gray;
+                labelAbdominalPain.Text = "non";
+            }
+        }
+
+        private void SwitchTirednessToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                labelTiredness.TextColor = Color.Red;
+                labelTiredness.Text = "oui";
+            }
+            else
+            {
+                labelTiredness.TextColor = Color.Gray;
+                labelTiredness.Text = "non";
+            }
         }
     }
 }
