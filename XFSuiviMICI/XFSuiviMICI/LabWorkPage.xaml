@@ -5,11 +5,49 @@
     <ContentPage.Content>
 
         <Grid>
-            
-            <ListView x:Name="labWorkListView">
+
+            <ListView x:Name="labWorkListView" HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding TestName }"/>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="80"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Grid.Column="0"
+                                           Grid.Row="0"
+                                           Text="{Binding DateLabWork, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                           Margin="20,0,0,0"
+                                           FontSize="Large"/>
+                                    <Label Grid.Column="0"
+                                           Grid.Row="1"
+                                           Text="{Binding TestName}"
+                                           Margin="20,0,0,10"
+                                           FontSize="Medium"
+                                           LineBreakMode="WordWrap"
+                                           HorizontalOptions="FillAndExpand"/>
+                                    <Label Grid.Column="1"
+                                           Grid.Row="1"
+                                           Text="{Binding TestValue}"
+                                           Margin="20,0,0,10"
+                                           FontSize="Medium"/>
+                                    <Label Grid.Column="2"
+                                           Grid.Row="1"
+                                           Text="{Binding TestUnit}"
+                                           Margin="20,0,0,10"
+                                           FontSize="Medium"/>
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

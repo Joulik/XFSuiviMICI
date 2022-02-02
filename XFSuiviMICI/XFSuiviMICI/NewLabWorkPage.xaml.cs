@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,8 +26,9 @@ namespace XFSuiviMICI
             {
                 DateLabWork = dateLabWorkPicked.Date,
                 TestName = testName.Text,
-                TestValue = Convert.ToInt32(testValue.Text),
-                TestUnit = testUnit.Text,
+                //TestValue = (float)Convert.ToDouble(testValue.Text),
+                TestValue = float.Parse(testValue.Text, CultureInfo.InvariantCulture.NumberFormat),
+                TestUnit = testUnit.Text
             };
 
             SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);

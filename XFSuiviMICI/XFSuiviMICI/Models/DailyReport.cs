@@ -11,7 +11,7 @@ namespace XFSuiviMICI.Models
         public int DailyReportId { get; set; }
         public bool BloodOrMucus { get; set; }
         public int BowelMovement { get; set; }
-        public DateTime DailyReportDate { get; set; }
+        public DateTime DateDailyReport { get; set; }
         public int Diastolic { get; set; }
         public bool AbdominalPain { get; set; }
         public bool Diarrhea { get; set; }
