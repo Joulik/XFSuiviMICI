@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XFSuiviMICI.LabWorkDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <DatePicker x:Name="dateLabWorkPicked"
+                        Format="dd/MM/yyyy"
+                        FontSize="Large"
+                        Margin="30,0,0,0"/>
+
+            <Entry x:Name="testName"
+                   Text="LabWork details"/>
+
+            <Entry x:Name="testValue"
+                   Margin="25,0,0,0"
+                   FontSize="Large"
+                   Keyboard="Numeric"/>
+
+            <Entry x:Name="testUnit"
+                   Margin="25,0,0,0"
+                   FontSize="Large"
+                   Placeholder="Ex. mg/l, μg/l..."/>
+
+            <Button Text="Sauvegarder modifications"
+                    x:Name="updateLabWorkButton"
+                    Clicked="UpdateLabWorkButton_Clicked"/>
+            <Button Text="Effacer"
+                    x:Name="deleteLabWorkButton"
+                    Clicked="DeleteLabWorkButton_Clicked"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -35,5 +35,14 @@ namespace XFSuiviMICI
         {
             Navigation.PushAsync(new NewLabWorkPage());
         }
+
+        private void labWorkListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedLabWork = labWorkListView.SelectedItem as LabWork;
+            if (selectedLabWork != null)
+            {
+                Navigation.PushAsync(new LabWorkDetailPage(selectedLabWork));
+            }
+        }
     }
 }

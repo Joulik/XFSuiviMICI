@@ -6,7 +6,9 @@
 
         <Grid>
 
-            <ListView x:Name="labWorkListView" HasUnevenRows="True">
+            <ListView x:Name="labWorkListView"
+                      HasUnevenRows="True"
+                      ItemSelected="labWorkListView_ItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
