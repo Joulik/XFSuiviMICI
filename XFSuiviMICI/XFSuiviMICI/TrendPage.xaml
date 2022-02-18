@@ -1,12 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
              x:Class="XFSuiviMICI.TrendPage">
+
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Statistiques et tendances"
+            <!--<Label Text="Statistiques et tendances"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" />-->
+
+            
+            <!--<Label x:Name="countTest"
+                   Text="xx"
+                    FontSize="Large" Margin="20,0,0,0"/>-->
+
+            <Button x:Name="buttonTrend"
+                    Text="Activer"
+                    Clicked="buttonTrend_Clicked"/>
+            
+            <oxy:PlotView Model="{Binding GraphModel}"
+                          HorizontalOptions="CenterAndExpand"/>
+
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

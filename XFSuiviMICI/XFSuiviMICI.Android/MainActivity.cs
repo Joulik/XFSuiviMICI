@@ -16,6 +16,9 @@ namespace XFSuiviMICI.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            OxyPlot.Xamarin.Forms.Platform.Android.PlotViewRenderer.Init();
+
             //LoadApplication(new App());
             string dbName = "suiviMICI_db.sqlite";
             string folderPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
