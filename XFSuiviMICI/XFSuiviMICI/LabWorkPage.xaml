@@ -1,14 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XFSuiviMICI.ViewModels"
              x:Class="XFSuiviMICI.LabWorkPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:LabWorkVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
 
         <Grid>
 
             <ListView x:Name="labWorkListView"
+                      BindingContext="{StaticResource vm}"
+                      ItemsSource="{Binding LabWorks}"
                       HasUnevenRows="True"
-                      ItemSelected="labWorkListView_ItemSelected">
+                      SelectedItem="{Binding SelectedLabWork}">
+            
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -55,16 +66,18 @@
             </ListView>
 
             <Image Grid.Column="0" Grid.Row="0"
-               Source="add_green.png"
-               HorizontalOptions="Center"
-               VerticalOptions="EndAndExpand"
-               Margin="0,0,0,0"
-               HeightRequest="96"
-               WidthRequest="96" >
+                   Source="add_green.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="EndAndExpand"
+                   Margin="0,0,0,0"
+                   HeightRequest="96"
+                   WidthRequest="96"
+                   BindingContext="{StaticResource vm}"
+                   >
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="LabTapGestureRecognizer_Tapped" />
-                    <!--Command="{Binding clickNewCard}"
-                  CommandParameter="3"-->
+                    <TapGestureRecognizer Command="{Binding ClickNewLabWorkCommand}" />
+                    <!--CommandParameter="3"-->
+                    <!--<TapGestureRecognizer Tapped="LabTapGestureRecognizer_Tapped" />-->
                 </Image.GestureRecognizers>
             </Image>
             
