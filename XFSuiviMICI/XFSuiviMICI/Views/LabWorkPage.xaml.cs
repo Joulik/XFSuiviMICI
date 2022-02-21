@@ -28,27 +28,6 @@ namespace XFSuiviMICI
             base.OnAppearing();
 
             vm.GetLabWorks();
-
-            //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            //{
-            //    conn.CreateTable<LabWork>();
-            //    var labWorks = conn.Table<LabWork>().ToList();
-            //    labWorkListView.ItemsSource = labWorks;
-            //}
         }
-
-        //    private void LabTapGestureRecognizer_Tapped(object sender, EventArgs e)
-        //{
-        //    Navigation.PushAsync(new NewLabWorkPage());
-        //}
-
-        //private void labWorkListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        //{
-        //    var selectedLabWork = labWorkListView.SelectedItem as LabWork;
-        //    if (selectedLabWork != null)
-        //    {
-        //        Navigation.PushAsync(new LabWorkDetailPage(selectedLabWork));
-        //    }
-        //}
     }
 }

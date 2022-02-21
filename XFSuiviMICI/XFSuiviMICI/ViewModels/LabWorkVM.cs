@@ -43,13 +43,6 @@ namespace XFSuiviMICI.ViewModels
                     LabWorks.Add(labwork);
                 }
             }
-
-            //using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            //{
-            //    conn.CreateTable<LabWork>();
-            //    var labWorks = conn.Table<LabWork>().ToList();
-            //    labWorkListView.ItemsSource = labWorks;
-            //}
         }
 
         public void ClickNewLabWork()
