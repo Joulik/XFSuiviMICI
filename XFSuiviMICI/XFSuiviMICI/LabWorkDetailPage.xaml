@@ -11,6 +11,7 @@
                         Margin="30,0,0,0"/>
 
             <Entry x:Name="testName"
+                   Margin="25,0,0,0"
                    Text="LabWork details"/>
 
             <Entry x:Name="testValue"
