@@ -1,35 +1,50 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XFSuiviMICI.ViewModels"
              x:Class="XFSuiviMICI.LabWorkDetailPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:LabWorkDetailVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
         <StackLayout>
 
             <DatePicker x:Name="dateLabWorkPicked"
                         Format="dd/MM/yyyy"
                         FontSize="Large"
-                        Margin="30,0,0,0"/>
+                        Margin="30,0,0,0"
+                        />
 
             <Entry x:Name="testName"
                    Margin="25,0,0,0"
-                   Text="LabWork details"/>
+                   />
 
             <Entry x:Name="testValue"
                    Margin="25,0,0,0"
                    FontSize="Large"
-                   Keyboard="Numeric"/>
+                   Keyboard="Numeric"
+                   />
 
             <Entry x:Name="testUnit"
                    Margin="25,0,0,0"
                    FontSize="Large"
-                   Placeholder="Ex. mg/l, μg/l..."/>
+                   Placeholder="Ex. mg/l, μg/l..."
+                   />
 
             <Button Text="Sauvegarder modifications"
                     x:Name="updateLabWorkButton"
-                    Clicked="UpdateLabWorkButton_Clicked"/>
+                    Command="{Binding UpdateCommand}" />
+
+            <!--Clicked="UpdateLabWorkButton_Clicked"-->
+            
             <Button Text="Effacer"
                     x:Name="deleteLabWorkButton"
-                    Clicked="DeleteLabWorkButton_Clicked"/>
+                    Command="{Binding Source={StaticResource vm}, Path=DeleteCommand}" />
+            <!--Clicked="DeleteLabWorkButton_Clicked"-->
 
         </StackLayout>
     </ContentPage.Content>

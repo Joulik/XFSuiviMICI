@@ -20,7 +20,7 @@
     <EmbeddedResource Update="DailyReportPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LabWorkDetailPage.xaml">
+    <EmbeddedResource Update="Views\LabWorkDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LabWorkPage.xaml">
