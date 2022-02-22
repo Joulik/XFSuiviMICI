@@ -42,7 +42,7 @@ namespace XFSuiviMICI.ViewModels
             if (rows > 0)
                 App.Current.MainPage.DisplayAlert("", "Sauvegarde effectuée", "OK");
             else
-                App.Current.MainPage.DisplayAlert("Problème", "Sauvegarde non enregistré", "OK");
+                App.Current.MainPage.DisplayAlert("Problème", "Sauvegarde non enregistrée", "OK");
 
             App.Current.MainPage.Navigation.PopAsync();
         }
