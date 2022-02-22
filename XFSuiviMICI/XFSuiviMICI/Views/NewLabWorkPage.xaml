@@ -1,10 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XFSuiviMICI.ViewModels"
              x:Class="XFSuiviMICI.NewLabWorkPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:NewLabWorkVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
     <ContentPage.Content>
 
-        <StackLayout>
+        <StackLayout BindingContext="{StaticResource vm}">
 
             <!--Date-->
             <Label Text="Date"
@@ -13,7 +21,8 @@
             <DatePicker x:Name="dateLabWorkPicked"
                         Format="dd/MM/yyyy"
                         FontSize="Large"
-                        Margin="30,0,0,0"/>
+                        Margin="30,0,0,0"
+                        Date="{Binding DateLabWork}"/>
 
             <!--Test Name-->
             <Label Text="Substance testée"
@@ -22,7 +31,8 @@
             <Entry x:Name="testName"
                    Margin="25,0,0,0"
                    FontSize="Large"
-                   Placeholder="Ex. CRP, Ferritine..."/>
+                   Placeholder="Ex. CRP, Ferritine..."
+                   Text="{Binding TestName}"/>
            
             <!--Test Value-->
             <Label Text="Valeur"
@@ -31,7 +41,8 @@
             <Entry x:Name="testValue"
                    Margin="25,0,0,0"
                    FontSize="Large"
-                   Keyboard="Numeric"/>
+                   Keyboard="Numeric"
+                   Text="{Binding TestValue}"/>
             
             <!--Test Unit-->
             <Label Text="Unité du dosage"
@@ -40,13 +51,14 @@
             <Entry x:Name="testUnit"
                    Margin="25,0,0,0"
                    FontSize="Large"
-                   Placeholder="Ex. mg/l, μg/l..."/>
-           
+                   Placeholder="Ex. mg/l, μg/l..."
+                   Text="{Binding TestUnit}"/>
+
             <Button Margin="0,25,0,10"
                     Text="Enregistrer"
                     FontSize="Medium"
                     VerticalOptions="EndAndExpand"
-                    Clicked="OnButtonLabWorkClicked"/>
+                    Command="{Binding Source={StaticResource vm}, Path=SaveCommand}" />
             
         </StackLayout>
 

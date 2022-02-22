@@ -72,12 +72,10 @@
                    Margin="0,0,0,0"
                    HeightRequest="96"
                    WidthRequest="96"
-                   BindingContext="{StaticResource vm}"
-                   >
+                   BindingContext="{StaticResource vm}">
+                
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding ClickNewLabWorkCommand}" />
-                    <!--CommandParameter="3"-->
-                    <!--<TapGestureRecognizer Tapped="LabTapGestureRecognizer_Tapped" />-->
                 </Image.GestureRecognizers>
             </Image>
             
