@@ -19,9 +19,18 @@ namespace XFSuiviMICI.ViewModels
             UpdateCommand = new Command(Update);
         }
 
-        private void Update(object obj)
+        private void Update()
         {
-            throw new NotImplementedException();
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<LabWork>();
+                int rows = conn.Update(SelectedLabWork);
+                if (rows > 0)
+                    App.Current.MainPage.DisplayAlert("", "Données mises à jour", "OK");
+                else
+                    App.Current.MainPage.DisplayAlert("Echec", "Données non mises à jour", "OK");
+                App.Current.MainPage.Navigation.PopAsync();
+            }
         }
 
         private void Delete()
@@ -33,25 +42,5 @@ namespace XFSuiviMICI.ViewModels
                 App.Current.MainPage.Navigation.PopAsync();
             }
         }
-
-        //private void Update()
-        //{
-        //    SelectedLabWork.DateLabWork = dateLabWorkPicked;
-        //    TestName = SelectedLabWork.TestName;
-        //    TestValue = SelectedLabWork.TestValue;
-        //    TestUnit = SelectedLabWork.TestUnit;
-
-        //    using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-        //    {
-        //        conn.CreateTable<LabWork>();
-        //        int rows = conn.Update(SelectedLabWork);
-        //        App.Current.MainPage.Navigation.PopAsync();
-
-        //        if (rows > 0)
-        //            App.Current.MainPage.DisplayAlert("Success", "Experience successfully updated", "OK");
-        //        else
-        //            App.Current.MainPage.DisplayAlert("Failure", "Failed to update experience", "OK");
-        //    }
-        //}
     }
 }

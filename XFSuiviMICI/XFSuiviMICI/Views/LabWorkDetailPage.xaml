@@ -11,40 +11,37 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout BindingContext="{StaticResource vm}">
 
             <DatePicker x:Name="dateLabWorkPicked"
                         Format="dd/MM/yyyy"
                         FontSize="Large"
                         Margin="30,0,0,0"
-                        />
+                        Date="{Binding SelectedLabWork.DateLabWork, StringFormat='{}{0:dd/MM/yyyy}'}" />
 
             <Entry x:Name="testName"
                    Margin="25,0,0,0"
-                   />
+                   Text="{Binding SelectedLabWork.TestName}"/>
 
             <Entry x:Name="testValue"
                    Margin="25,0,0,0"
                    FontSize="Large"
                    Keyboard="Numeric"
-                   />
+                   Text="{Binding SelectedLabWork.TestValue}"/>
 
             <Entry x:Name="testUnit"
                    Margin="25,0,0,0"
                    FontSize="Large"
                    Placeholder="Ex. mg/l, μg/l..."
-                   />
+                   Text="{Binding SelectedLabWork.TestUnit}"/>
 
             <Button Text="Sauvegarder modifications"
                     x:Name="updateLabWorkButton"
-                    Command="{Binding UpdateCommand}" />
+                    Command="{Binding Source={StaticResource vm}, Path=UpdateCommand}"/>
 
-            <!--Clicked="UpdateLabWorkButton_Clicked"-->
-            
             <Button Text="Effacer"
                     x:Name="deleteLabWorkButton"
                     Command="{Binding Source={StaticResource vm}, Path=DeleteCommand}" />
-            <!--Clicked="DeleteLabWorkButton_Clicked"-->
 
         </StackLayout>
     </ContentPage.Content>
