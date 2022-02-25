@@ -16,14 +16,12 @@ namespace XFSuiviMICI
         {
             InitializeComponent();
         }
-
         private void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
         {
             double value = e.NewValue;
             
             countBowelMovement.Text = string.Format("{0}", value);
         }
-
         private void SwitchDiarrheaToggled(object sender, ToggledEventArgs e)
         {
             if (e.Value == true)
@@ -37,7 +35,6 @@ namespace XFSuiviMICI
                 labelDiarrhea.Text = "non";
             }   
         }
-
         private void SwitchBloodMucusToggled(object sender, ToggledEventArgs e)
         {
             if (e.Value == true)
@@ -51,7 +48,6 @@ namespace XFSuiviMICI
                 labelBloodMucus.Text = "non";
             }
         }
-
         private void SwitchAbdominalPainToggled(object sender, ToggledEventArgs e)
         {
             if (e.Value == true)
@@ -65,7 +61,6 @@ namespace XFSuiviMICI
                 labelAbdominalPain.Text = "non";
             }
         }
-
         private void SwitchTirednessToggled(object sender, ToggledEventArgs e)
         {
             if (e.Value == true)
@@ -79,10 +74,5 @@ namespace XFSuiviMICI
                 labelTiredness.Text = "non";
             }
         }
-        //private void OnButtonNewDailyClicked(object sender, EventArgs e)
-        //{
-        //    //DisplayAlert("", "Sauvegarde effectuée", "OK");
-        //    Navigation.PopAsync();
-        //}
     }
 }

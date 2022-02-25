@@ -20,7 +20,6 @@ namespace XFSuiviMICI
 
             vm = Resources["vm"] as DailyReportVM;
         }
-
         protected override void OnAppearing()
         {
             base.OnAppearing();

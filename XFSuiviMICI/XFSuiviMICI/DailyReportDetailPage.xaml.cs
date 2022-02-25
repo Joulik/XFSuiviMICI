@@ -21,8 +21,6 @@ namespace XFSuiviMICI
 
             (Resources["vm"] as DailyReportDetailVM).SelectedDailyReport = selectedDailyReport;
 
-            //this.selectedLabWork = selectedLabWork;
-
             dateDaiylReportPicked.Date = selectedDailyReport.DateDailyReport;
             weight.Text = selectedDailyReport.Weight.ToString();
             countBowelMovement.Text = selectedDailyReport.BowelMovement.ToString();
@@ -33,6 +31,64 @@ namespace XFSuiviMICI
             heartRate.Text = selectedDailyReport.HeartRate.ToString();
             systolic.Text = selectedDailyReport.Systolic.ToString();
             diastolic.Text = selectedDailyReport.Diastolic.ToString();
+        }
+        private void OnStepperValueChanged(object sender, ValueChangedEventArgs e)
+        {
+            double value = e.NewValue;
+
+            countBowelMovement.Text = string.Format("{0}", value);
+        }
+        private void SwitchDiarrheaToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                labelDiarrhea.TextColor = Color.Red;
+                labelDiarrhea.Text = "oui";
+            }
+            else
+            {
+                labelDiarrhea.TextColor = Color.Gray;
+                labelDiarrhea.Text = "non";
+            }
+        }
+        private void SwitchBloodMucusToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                labelBloodMucus.TextColor = Color.Red;
+                labelBloodMucus.Text = "oui";
+            }
+            else
+            {
+                labelBloodMucus.TextColor = Color.Gray;
+                labelBloodMucus.Text = "non";
+            }
+        }
+        private void SwitchAbdominalPainToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                labelAbdominalPain.TextColor = Color.Red;
+                labelAbdominalPain.Text = "oui";
+            }
+            else
+            {
+                labelAbdominalPain.TextColor = Color.Gray;
+                labelAbdominalPain.Text = "non";
+            }
+        }
+        private void SwitchTirednessToggled(object sender, ToggledEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                labelTiredness.TextColor = Color.Red;
+                labelTiredness.Text = "oui";
+            }
+            else
+            {
+                labelTiredness.TextColor = Color.Gray;
+                labelTiredness.Text = "non";
+            }
         }
     }
 }

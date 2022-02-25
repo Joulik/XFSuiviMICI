@@ -47,6 +47,7 @@
                          Maximum="30"
                          Increment="1"
                          HorizontalOptions="Center"
+                         ValueChanged="OnStepperValueChanged"
                          Value="{Binding SelectedDailyReport.BowelMovement}"/>
 
                 <!--Diahrrea-->
@@ -57,7 +58,8 @@
                     <Switch x:Name="switchDiarrhea"
                             OnColor="#ff6868"
                             Margin="50,0,0,0"
-                            IsToggled="{Binding SelectedDailyReport.Diarrhea}"/>
+                            IsToggled="{Binding SelectedDailyReport.Diarrhea}"
+                            Toggled="SwitchDiarrheaToggled"/>
 
                     <Label x:Name="labelDiarrhea"
                            Text="non"
@@ -72,7 +74,8 @@
                     <Switch x:Name="switchBloodMucus"
                             OnColor="#ff6868"
                             Margin="50,0,0,0"
-                            IsToggled="{Binding SelectedDailyReport.BloodOrMucus}"/>
+                            IsToggled="{Binding SelectedDailyReport.BloodOrMucus}"
+                            Toggled="SwitchBloodMucusToggled"/>
 
                     <Label x:Name="labelBloodMucus"
                            Text="non"
@@ -87,7 +90,8 @@
                     <Switch x:Name="switchAdbominalPain" 
                             OnColor="#ff6868"
                             Margin="50,0,0,0"
-                            IsToggled="{Binding SelectedDailyReport.AbdominalPain}"/>
+                            IsToggled="{Binding SelectedDailyReport.AbdominalPain}"
+                            Toggled="SwitchAbdominalPainToggled"/>
 
                     <Label x:Name="labelAbdominalPain"
                            Text="non"
@@ -103,7 +107,8 @@
                     <Switch x:Name="switchTiredness"
                             OnColor="#ff6868"
                             Margin="50,0,0,0"
-                            IsToggled="{Binding SelectedDailyReport.Tiredness}"/>
+                            IsToggled="{Binding SelectedDailyReport.Tiredness}"
+                            Toggled="SwitchTirednessToggled"/>
 
                     <Label x:Name="labelTiredness"
                            Text="non"
