@@ -17,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="DailyReportDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\DailyReportPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

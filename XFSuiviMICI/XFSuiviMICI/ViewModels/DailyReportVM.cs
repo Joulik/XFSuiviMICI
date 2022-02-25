@@ -12,6 +12,18 @@ namespace XFSuiviMICI.ViewModels
     {
         public ObservableCollection<DailyReport> DailyReports { get; set; }
         public Command ClickNewDailyReportCommand { get; set; }
+
+        private DailyReport selectedDailyReport;
+        public DailyReport SelectedDailyReport
+        {
+            get { return selectedDailyReport; }
+            set
+            {
+                selectedDailyReport = value;
+                if (selectedDailyReport != null)
+                    App.Current.MainPage.Navigation.PushAsync(new DailyReportDetailPage(selectedDailyReport));
+            }
+        }
         public DailyReportVM()
         {
             DailyReports = new ObservableCollection<DailyReport>();

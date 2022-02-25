@@ -88,7 +88,8 @@
                     <Label Text="Maux de ventre"
                            Margin="25,0,0,0"
                            FontSize="Large"/>
-                    <Switch OnColor="#ff6868"
+                    <Switch x:Name="switchAbdominalPain"
+                            OnColor="#ff6868"
                             Margin="50,0,0,0"
                             IsToggled="{Binding AbdominalPain}"
                             Toggled="SwitchAbdominalPainToggled"/>
@@ -102,7 +103,8 @@
                     <Label Text="Fatigue"
                            Margin="25,0,0,0"
                            FontSize="Large"/>
-                    <Switch OnColor="#ff6868"
+                    <Switch x:Name="switchTiredness"
+                            OnColor="#ff6868"
                             Margin="50,0,0,0"
                             IsToggled="{Binding Tiredness}"
                             Toggled="SwitchTirednessToggled"/>

@@ -20,8 +20,8 @@
             <ListView x:Name="dailyReportListView"
                       BindingContext="{StaticResource vm}"
                       ItemsSource="{Binding DailyReports}"
-                      HasUnevenRows="True">
-                <!--SelectedItem="{Binding SelectedDailyReport}">-->
+                      HasUnevenRows="True"
+                      SelectedItem="{Binding SelectedDailyReport}">
                 
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -29,7 +29,6 @@
                             <ViewCell.View>
                                 <Frame CornerRadius="10"
                                        HasShadow="True"
-                                       
                                        OutlineColor="DarkGray"
                                        Padding="8">
                                 <Grid>
@@ -46,8 +45,6 @@
                                         <ColumnDefinition Width="auto"/>
                                     </Grid.ColumnDefinitions>
 
-                                    
-                                    
                                     <Label Grid.Row="0"
                                            Grid.Column="0"
                                            Text="{Binding DateDailyReport, StringFormat='{}{0:dd/MM/yyyy}'}"
