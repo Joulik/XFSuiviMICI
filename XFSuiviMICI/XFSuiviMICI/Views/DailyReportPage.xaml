@@ -110,21 +110,18 @@
                 </ListView.ItemTemplate>
             </ListView>
             
-            
-            
-            <!--<Image Grid.Column="0" Grid.Row="0"
-               Source="add_green.png"
-               HorizontalOptions="Center"
-               VerticalOptions="EndAndExpand"
-               Margin="0,0,0,0"
-               HeightRequest="96"
-               WidthRequest="96" >
+            <Image Grid.Column="0"
+                   Grid.Row="0"
+                   Source="add_green.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="EndAndExpand"
+                   Margin="0,0,0,0"
+                   HeightRequest="96"
+                   WidthRequest="96">
                 <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="DailyTapGestureRecognizer_Tapped" />
-                    --><!--Command="{Binding clickNewCard}"
-                  CommandParameter="3"--><!--
+                    <TapGestureRecognizer Command="{Binding Source={StaticResource vm}, Path=ClickNewDailyReportCommand}" />
                 </Image.GestureRecognizers>
-            </Image>-->
+            </Image>
         </Grid>
 
     </ContentPage.Content>
