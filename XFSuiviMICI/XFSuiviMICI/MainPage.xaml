@@ -10,7 +10,7 @@
                            IconImageSource="article.png"/>
     <local:TreatmentPage Title="Medocs"
                          IconImageSource="pills.png"/>
-    <local:LabWorkPage Title="Bio"
+    <local:LabWorkPage Title="Labo"
                        IconImageSource="biotech.png"/>
 
 </TabbedPage>

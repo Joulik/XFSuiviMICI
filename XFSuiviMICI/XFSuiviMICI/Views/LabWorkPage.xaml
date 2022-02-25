@@ -24,41 +24,47 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.View>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto"/>
-                                        <RowDefinition Height="Auto"/>
-                                    </Grid.RowDefinitions>
+                                <Frame CornerRadius="10"
+                                       HasShadow="True"
+                                       OutlineColor="DarkGray"
+                                       Padding="8">
 
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="80"/>
-                                        <ColumnDefinition Width="80"/>
-                                    </Grid.ColumnDefinitions>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
 
-                                    <Label Grid.Column="0"
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="80"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Column="0"
                                            Grid.Row="0"
                                            Text="{Binding DateLabWork, StringFormat='{}{0:dd/MM/yyyy}'}"
                                            Margin="20,0,0,0"
                                            FontSize="Large"/>
-                                    <Label Grid.Column="0"
+                                        <Label Grid.Column="0"
                                            Grid.Row="1"
                                            Text="{Binding TestName}"
                                            Margin="20,0,0,10"
                                            FontSize="Medium"
                                            LineBreakMode="WordWrap"
                                            HorizontalOptions="FillAndExpand"/>
-                                    <Label Grid.Column="1"
+                                        <Label Grid.Column="1"
                                            Grid.Row="1"
                                            Text="{Binding TestValue}"
                                            Margin="20,0,0,10"
                                            FontSize="Medium"/>
-                                    <Label Grid.Column="2"
+                                        <Label Grid.Column="2"
                                            Grid.Row="1"
                                            Text="{Binding TestUnit}"
                                            Margin="20,0,0,10"
                                            FontSize="Medium"/>
-                                </Grid>
+                                    </Grid>
+                                </Frame>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
