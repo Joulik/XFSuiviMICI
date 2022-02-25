@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XFSuiviMICI.ViewModels"
+             x:Class="XFSuiviMICI.NewDailyReportPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:NewDailyReportVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BindingContext="{StaticResource vm}">
+
+                <!--Date-->
+                <Label Text="Date"
+                       Margin="25,0,0,0"
+                       FontSize="Large"/>
+                <DatePicker x:Name="dateDailyPicked"
+                            Format="dd/MM/yyyy"
+                            FontSize="Large"
+                            Margin="30,0,0,0"
+                            Date="{Binding DateDailyReport}"/>
+
+                <!--Weight-->
+                <Label Text="Poids (kg)"
+                       Margin="25,0,0,0"
+                       FontSize="Large"/>
+                <Entry x:Name="weight"
+                       Keyboard="Numeric"
+                       Margin="25,0,0,0"
+                       FontSize="Large"
+                       Text="{Binding Weight}"/>
+
+                <!--BowelMouvement-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nombre de selles"
+                           Margin="25,0,30,0"
+                           FontSize="Large"/>
+                    <Label x:Name="countBowelMovement"
+                           FontSize="Large"
+                           Text="0"/>
+                    <!--Text="{Binding BowelMovement}"-->
+                    <!--Text="0"-->
+                </StackLayout>
+
+                <Stepper Minimum="0"
+                         Maximum="30"
+                         Increment="1"
+                         HorizontalOptions="Center"
+                         ValueChanged="OnStepperValueChanged"
+                         Value="{Binding BowelMovement}"/>
+
+                <!--Diahrrea-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Diarrhée"
+                           Margin="25,0,0,0"
+                           FontSize="Large"/>
+                    <Switch x:Name="switchDiarrhea"
+                            OnColor="#ff6868"
+                            Margin="50,0,0,0"
+                            IsToggled="{Binding Diarrhea}"
+                            Toggled="SwitchDiarrheaToggled"/>
+                    <Label x:Name="labelDiarrhea"
+                           Text="non"
+                           Margin="0,5,0,0"/>
+                </StackLayout>
+
+                <!--BloodOrMucus-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Sang et/ou glaires"
+                           Margin="25,0,0,0"
+                           FontSize="Large"/>
+                    <Switch x:Name="switchBloodMucus"
+                            OnColor="#ff6868"
+                            Margin="50,0,0,0"
+                            IsToggled="{Binding BloodOrMucus}"
+                            Toggled="SwitchBloodMucusToggled"/>
+                    <Label x:Name="labelBloodMucus"
+                           Text="non"
+                           Margin="0,5,0,0"/>
+                </StackLayout>
+
+                <!--AbdominalPain-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Maux de ventre"
+                           Margin="25,0,0,0"
+                           FontSize="Large"/>
+                    <Switch OnColor="#ff6868"
+                            Margin="50,0,0,0"
+                            IsToggled="{Binding AbdominalPain}"
+                            Toggled="SwitchAbdominalPainToggled"/>
+                    <Label x:Name="labelAbdominalPain"
+                           Text="non"
+                           Margin="0,5,0,0"/>
+                </StackLayout>
+
+                <!--Tiredness-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Fatigue"
+                           Margin="25,0,0,0"
+                           FontSize="Large"/>
+                    <Switch OnColor="#ff6868"
+                            Margin="50,0,0,0"
+                            IsToggled="{Binding Tiredness}"
+                            Toggled="SwitchTirednessToggled"/>
+                    <Label x:Name="labelTiredness"
+                           Text="non"
+                           Margin="0,5,0,0"/>
+                </StackLayout>
+
+                <!--HeartRate-->
+                <Label Text="Fréquence cardiaque (BPM)"
+                       Margin="25,0,0,0"
+                       FontSize="Large"/>
+                <Entry x:Name="heartRate"
+                       Keyboard="Numeric"
+                       Margin="25,0,0,0"
+                       FontSize="Large"
+                       Text="{Binding HeartRate}"/>
+
+                <!--Systolic-->
+                <Label Text="Pression systolique (mmHg)"
+                       Margin="25,0,0,0"
+                       FontSize="Large"/>
+                <Entry x:Name="systolic"
+                       Keyboard="Numeric"
+                       Margin="25,0,0,0"
+                       FontSize="Large"
+                       Text="{Binding Systolic}"/>
+
+                <!--Diastolic-->
+                <Label Text="Pression diastolique (mmHg)"
+                       Margin="25,0,0,0"
+                       FontSize="Large"/>
+                <Entry x:Name="diastolic"
+                       Keyboard="Numeric"
+                       Margin="25,0,0,0"
+                       FontSize="Large"
+                       Text="{Binding Diastolic}"/>
+
+                <!--Save Button-->
+                <Button Margin="0,25,0,10"
+                        Text="Enregistrer"
+                        FontSize="Medium"
+                        VerticalOptions="End"
+                        Command="{Binding SaveCommand}"/>
+                <!--Clicked="OnButtonNewDailyClicked"/>-->
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+    
+</ContentPage>

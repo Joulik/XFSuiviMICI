@@ -33,18 +33,19 @@ namespace XFSuiviMICI.ViewModels
                 TestUnit = TestUnit,
             };
 
-            SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation);
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<LabWork>();
+                int rows = conn.Insert(labWork);
+                conn.Close();
 
-            conn.CreateTable<LabWork>();
-            int rows = conn.Insert(labWork);
-            conn.Close();
+                if (rows > 0)
+                    App.Current.MainPage.DisplayAlert("", "Sauvegarde effectuée", "OK");
+                else
+                    App.Current.MainPage.DisplayAlert("Problème", "Sauvegarde non enregistrée", "OK");
 
-            if (rows > 0)
-                App.Current.MainPage.DisplayAlert("", "Sauvegarde effectuée", "OK");
-            else
-                App.Current.MainPage.DisplayAlert("Problème", "Sauvegarde non enregistrée", "OK");
-
-            App.Current.MainPage.Navigation.PopAsync();
+                App.Current.MainPage.Navigation.PopAsync();
+            }
         }
     }
 }

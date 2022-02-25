@@ -79,10 +79,10 @@ namespace XFSuiviMICI
                 labelTiredness.Text = "non";
             }
         }
-        private void OnButtonNewDailyClicked(object sender, EventArgs e)
-        {
-            //DisplayAlert("", "Sauvegarde effectuée", "OK");
-            Navigation.PopAsync();
-        }
+        //private void OnButtonNewDailyClicked(object sender, EventArgs e)
+        //{
+        //    //DisplayAlert("", "Sauvegarde effectuée", "OK");
+        //    Navigation.PopAsync();
+        //}
     }
 }
