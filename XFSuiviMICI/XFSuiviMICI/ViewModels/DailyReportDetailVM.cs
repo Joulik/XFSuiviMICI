@@ -22,7 +22,16 @@ namespace XFSuiviMICI.ViewModels
 
         private void Update()
         {
-            throw new NotImplementedException();
+            using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
+            {
+                conn.CreateTable<DailyReport>();
+                int rows = conn.Update(SelectedDailyReport);
+                if (rows > 0)
+                    App.Current.MainPage.DisplayAlert("", "Données mises à jour", "OK");
+                else
+                    App.Current.MainPage.DisplayAlert("Echec", "Données non mises à jour", "OK");
+                App.Current.MainPage.Navigation.PopAsync();
+            }
         }
 
         private void Delete()

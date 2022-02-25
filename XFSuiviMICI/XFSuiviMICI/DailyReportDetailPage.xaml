@@ -11,141 +11,143 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <StackLayout BindingContext="{StaticResource vm}">
-            <!--Date-->
-            <Label Text="Date"
+        <ScrollView>
+            <StackLayout BindingContext="{StaticResource vm}">
+                <!--Date-->
+                <Label Text="Date"
                        Margin="25,0,0,0"
                        FontSize="Large"/>
-            <DatePicker x:Name="dateDaiylReportPicked"
-                        Format="dd/MM/yyyy"
-                        FontSize="Large"
-                        Margin="30,0,0,0"
-                        Date="{Binding SelectedDailyReport.DateDailyReport, StringFormat='{}{0:dd/MM/yyyy}'}" />
+                <DatePicker x:Name="dateDaiylReportPicked"
+                            Format="dd/MM/yyyy"
+                            FontSize="Large"
+                            Margin="30,0,0,0"
+                            Date="{Binding SelectedDailyReport.DateDailyReport, StringFormat='{}{0:dd/MM/yyyy}'}" />
             
-            <!--Weight-->
-            <Label Text="Poids (kg)"
+                <!--Weight-->
+                <Label Text="Poids (kg)"
                        Margin="25,0,0,0"
                        FontSize="Large"/>
-            <Entry x:Name="weight"
+                <Entry x:Name="weight"
                        Keyboard="Numeric"
                        Margin="25,0,0,0"
                        FontSize="Large"
                        Text="{Binding SelectedDailyReport.Weight}"/>
 
-            <!--BowelMouvement-->
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Nombre de selles"
+                <!--BowelMouvement-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Nombre de selles"
                            Margin="25,0,30,0"
                            FontSize="Large"/>
-                <Label x:Name="countBowelMovement"
+                    <Label x:Name="countBowelMovement"
                            FontSize="Large"
                            Text="0"/>
-            </StackLayout>
+                </StackLayout>
 
-            <Stepper Minimum="0"
+                <Stepper Minimum="0"
                          Maximum="30"
                          Increment="1"
                          HorizontalOptions="Center"
                          Value="{Binding SelectedDailyReport.BowelMovement}"/>
-            <!--ValueChanged="OnStepperValueChanged"-->
 
-            <!--Diahrrea-->
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Diarrhée"
+                <!--Diahrrea-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Diarrhée"
                            Margin="25,0,0,0"
                            FontSize="Large"/>
-                <Switch x:Name="switchDiarrhea"
+                    <Switch x:Name="switchDiarrhea"
                             OnColor="#ff6868"
                             Margin="50,0,0,0"
-                            IsToggled="{Binding SelectedDailyReport.Diarrhea}"
-                            />
-                <!--Toggled="SwitchDiarrheaToggled"-->
-                <Label x:Name="labelDiarrhea"
+                            IsToggled="{Binding SelectedDailyReport.Diarrhea}"/>
+
+                    <Label x:Name="labelDiarrhea"
                            Text="non"
                            Margin="0,5,0,0"/>
-            </StackLayout>
+                </StackLayout>
 
-            <!--BloodOrMucus-->
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Sang et/ou glaires"
+                <!--BloodOrMucus-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Sang et/ou glaires"
                            Margin="25,0,0,0"
                            FontSize="Large"/>
-                <Switch x:Name="switchBloodMucus"
+                    <Switch x:Name="switchBloodMucus"
                             OnColor="#ff6868"
                             Margin="50,0,0,0"
-                            IsToggled="{Binding SelectedDailyReport.BloodOrMucus}"
-                            />
-                <!--Toggled="SwitchBloodMucusToggled"-->
-                <Label x:Name="labelBloodMucus"
+                            IsToggled="{Binding SelectedDailyReport.BloodOrMucus}"/>
+
+                    <Label x:Name="labelBloodMucus"
                            Text="non"
                            Margin="0,5,0,0"/>
-            </StackLayout>
+                </StackLayout>
 
             <!--AbdominalPain-->
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Maux de ventre"
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Maux de ventre"
                            Margin="25,0,0,0"
                            FontSize="Large"/>
-                <Switch x:Name="switchAdbominalPain" 
-                    OnColor="#ff6868"
+                    <Switch x:Name="switchAdbominalPain" 
+                            OnColor="#ff6868"
                             Margin="50,0,0,0"
-                            IsToggled="{Binding SelectedDailyReport.AbdominalPain}"
-                            />
-                <!--Toggled="SwitchAbdominalPainToggled"-->
-                <Label x:Name="labelAbdominalPain"
+                            IsToggled="{Binding SelectedDailyReport.AbdominalPain}"/>
+
+                    <Label x:Name="labelAbdominalPain"
                            Text="non"
                            Margin="0,5,0,0"/>
-            </StackLayout>
+                </StackLayout>
 
-            <!--Tiredness-->
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Fatigue"
+
+                <!--Tiredness-->
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Fatigue"
                            Margin="25,0,0,0"
                            FontSize="Large"/>
-                <Switch x:Name="switchTiredness"
-                    OnColor="#ff6868"
+                    <Switch x:Name="switchTiredness"
+                            OnColor="#ff6868"
                             Margin="50,0,0,0"
-                            IsToggled="{Binding SelectedDailyReport.Tiredness}"
-                            />
-                <!--Toggled="SwitchTirednessToggled"-->
-                <Label x:Name="labelTiredness"
+                            IsToggled="{Binding SelectedDailyReport.Tiredness}"/>
+
+                    <Label x:Name="labelTiredness"
                            Text="non"
                            Margin="0,5,0,0"/>
-            </StackLayout>
+                </StackLayout>
 
-            <!--HeartRate-->
-            <Label Text="Fréquence cardiaque (BPM)"
+                <!--HeartRate-->
+                <Label Text="Fréquence cardiaque (BPM)"
                        Margin="25,0,0,0"
                        FontSize="Large"/>
-            <Entry x:Name="heartRate"
+                <Entry x:Name="heartRate"
                        Keyboard="Numeric"
                        Margin="25,0,0,0"
                        FontSize="Large"
                        Text="{Binding SelectedDailyReport.HeartRate}"/>
 
-            <!--Systolic-->
-            <Label Text="Pression systolique (mmHg)"
+                <!--Systolic-->
+                <Label Text="Pression systolique (mmHg)"
                        Margin="25,0,0,0"
                        FontSize="Large"/>
-            <Entry x:Name="systolic"
+                <Entry x:Name="systolic"
                        Keyboard="Numeric"
                        Margin="25,0,0,0"
                        FontSize="Large"
                        Text="{Binding SelectedDailyReport.Systolic}"/>
 
-            <!--Diastolic-->
-            <Label Text="Pression diastolique (mmHg)"
+                <!--Diastolic-->
+                <Label Text="Pression diastolique (mmHg)"
                        Margin="25,0,0,0"
                        FontSize="Large"/>
-            <Entry x:Name="diastolic"
+                <Entry x:Name="diastolic"
                        Keyboard="Numeric"
                        Margin="25,0,0,0"
                        FontSize="Large"
                        Text="{Binding SelectedDailyReport.Diastolic}"/>
 
+                <Button Text="Sauvegarder modifications"
+                        x:Name="updateDailyReportButton"
+                        Command="{Binding Source={StaticResource vm}, Path=UpdateCommand}"/>
 
-
-
-        </StackLayout>
+                <Button Text="Effacer"
+                        x:Name="deleteDailyReportButton"
+                        Command="{Binding Source={StaticResource vm}, Path=DeleteCommand}" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

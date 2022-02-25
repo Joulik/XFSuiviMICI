@@ -22,7 +22,7 @@
                       ItemsSource="{Binding DailyReports}"
                       HasUnevenRows="True"
                       SelectedItem="{Binding SelectedDailyReport}">
-                
+
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -31,82 +31,82 @@
                                        HasShadow="True"
                                        OutlineColor="DarkGray"
                                        Padding="8">
-                                <Grid>
-                                    
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
-                                        <RowDefinition Height="auto"/>
-                                    </Grid.RowDefinitions>
-                                    
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="auto"/>
-                                        <ColumnDefinition Width="auto"/>
-                                    </Grid.ColumnDefinitions>
+                                    <Grid>
 
-                                    <Label Grid.Row="0"
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                            <RowDefinition Height="auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="auto"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Row="0"
                                            Grid.Column="0"
                                            Text="{Binding DateDailyReport, StringFormat='{}{0:dd/MM/yyyy}'}"
                                            Margin="20,0,0,0"
                                            FontSize="Large"/>
 
-                                    <Label Grid.Row="1"
+                                        <Label Grid.Row="1"
                                            Grid.Column="0"
                                            Margin="20,0,0,0"
                                            FontSize="Medium">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Weight}"/>
-                                                <Span Text=" kg"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding Weight}"/>
+                                                    <Span Text=" kg"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
-                                    <Label Grid.Row="2"
+                                        <Label Grid.Row="2"
                                            Grid.Column="0"
                                            Margin="20,0,0,0"
                                            FontSize="Medium">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding HeartRate}"/>
-                                                <Span Text=" BPM"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding HeartRate}"/>
+                                                    <Span Text=" BPM"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
-                                    <Label Grid.Row="2"
+                                        <Label Grid.Row="2"
                                            Grid.Column="1"
                                            FontSize="Medium">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Systolic}"/>
-                                                <Span Text=" /"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding Systolic}"/>
+                                                    <Span Text=" /"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
-                                    <Label Grid.Row="2"
+                                        <Label Grid.Row="2"
                                            Grid.Column="2"
                                            FontSize="Medium">
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding Diastolic}"/>
-                                                <Span Text=" mmHg"/>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-                                        
-                                    
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding Diastolic}"/>
+                                                    <Span Text=" mmHg"/>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
 
-                                </Grid>
+
+
+                                    </Grid>
                                 </Frame>
                             </ViewCell.View>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            
+
             <Image Grid.Column="0"
                    Grid.Row="0"
                    Source="add_green.png"
