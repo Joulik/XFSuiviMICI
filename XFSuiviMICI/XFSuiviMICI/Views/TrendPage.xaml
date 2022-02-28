@@ -13,9 +13,9 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Statistiques et tendances"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding nn}"
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand"/>
 
             <oxy:PlotView BindingContext="{StaticResource vm}"
                           Model="{Binding GraphModel}"

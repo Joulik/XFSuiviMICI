@@ -23,7 +23,7 @@ namespace XFSuiviMICI.ViewModels
             set 
             { graphModel = value; }
         }
-
+        
         public event PropertyChangedEventHandler PropertyChanged;
         public TrendPageVM()
         {
@@ -40,6 +40,8 @@ namespace XFSuiviMICI.ViewModels
                 var model = new PlotModel { Title = "Test" };
                 var barSeries = new ColumnSeries { };
                 var dailyreports = conn.Table<DailyReport>().Select(s => s);
+                int nn = dailyreports.Count();
+                List<string> datesList = new List<string>();
 
                 foreach (var dailyreport in dailyreports)
                 {
@@ -47,19 +49,20 @@ namespace XFSuiviMICI.ViewModels
                     {
                         Value = Convert.ToDouble(dailyreport.Weight)
                     });
+                    datesList.Add(dailyreport.DateDailyReport.ToString("dd/MM/yyyy"));
                 }
 
                 model.Series.Add(barSeries);
-                String[] xValues = new String[] { "0","1","2","3","4","5"}; 
-
+                
                 model.Axes.Add(new CategoryAxis
                 {
                     Position = AxisPosition.Bottom,
                     Key = "Sample Data",
-                    ItemsSource = xValues,
+                    ItemsSource = datesList,
                     IsPanEnabled = false,
                     IsZoomEnabled = false,
                     Selectable = false,
+                    Angle = 90,
                 });
 
                 GraphModel = model;
