@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 using XFSuiviMICI.Models;
@@ -35,7 +36,7 @@ namespace XFSuiviMICI.ViewModels
             {
                 DailyReports.Clear();
                 conn.CreateTable<DailyReport>();
-                var dailyreports = conn.Table<DailyReport>().ToList();
+                var dailyreports = conn.Table<DailyReport>().Select(d => d).OrderByDescending(d => d.DateDailyReport).ToList();
                 foreach (var dailyreport in dailyreports)
                 {
                     DailyReports.Add(dailyreport);

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 using XFSuiviMICI.Models;
@@ -37,7 +38,7 @@ namespace XFSuiviMICI.ViewModels
             {
                 LabWorks.Clear();
                 conn.CreateTable<LabWork>();
-                var labworks = conn.Table<LabWork>().ToList();
+                var labworks = conn.Table<LabWork>().Select(d => d).OrderByDescending(d => d.DateLabWork).ToList();
                 foreach (var labwork in labworks)
                 {
                     LabWorks.Add(labwork);
