@@ -48,12 +48,13 @@
             <Label Text="Unité du dosage"
                    Margin="25,25,0,0"
                    FontSize="Large"/>
-            <Entry x:Name="testUnit"
-                   Margin="25,0,0,0"
-                   FontSize="Large"
-                   Placeholder="Ex. mg/l, μg/l..."
-                   Text="{Binding TestUnit}"/>
+            <Picker Title="Choisissez une unité"
+                    x:Name="testUnit"
+                    Margin="25,0,0,0"
+                    SelectedItem="{Binding TestUnit}">
+            </Picker>
 
+            <!--Save Button-->
             <Button Margin="0,25,0,10"
                     Text="Enregistrer"
                     FontSize="Medium"

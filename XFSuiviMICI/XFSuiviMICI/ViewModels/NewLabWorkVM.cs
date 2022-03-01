@@ -47,5 +47,29 @@ namespace XFSuiviMICI.ViewModels
                 App.Current.MainPage.Navigation.PopAsync();
             }
         }
+
+        public List<string>GetTestUnit()
+        {
+            return new List<string>
+            {
+                "giga/L",
+                "tera/L",
+                "g/dL",
+                "mg/L",
+                "μg/l",
+                "mmol/L",
+                "μmol/L",
+                "U/L",
+                "UI/L",
+                "mUI/L",
+                "%",
+                "μm3",
+                "pg",
+                "mm",
+                "mL/min",
+                "S/C",
+                "Autre"
+            };
+        }
     }
 }
