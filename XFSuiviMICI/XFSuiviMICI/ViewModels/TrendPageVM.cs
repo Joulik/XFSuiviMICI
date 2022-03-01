@@ -39,7 +39,7 @@ namespace XFSuiviMICI.ViewModels
 
                 var model = new PlotModel { Title = "Test" };
                 var barSeries = new ColumnSeries { };
-                var dailyreports = conn.Table<DailyReport>().Select(s => s);
+                var dailyreports = conn.Table<LabWork>().Select(s => s).OrderBy(s => s.DateLabWork);
                 int nn = dailyreports.Count();
                 List<string> datesList = new List<string>();
 
@@ -47,9 +47,9 @@ namespace XFSuiviMICI.ViewModels
                 {
                     barSeries.Items.Add(new ColumnItem
                     {
-                        Value = Convert.ToDouble(dailyreport.Weight)
+                        Value = Convert.ToDouble(dailyreport.TestValue)
                     });
-                    datesList.Add(dailyreport.DateDailyReport.ToString("dd/MM/yyyy"));
+                    datesList.Add(dailyreport.DateLabWork.ToString("dd/MM/yyyy"));
                 }
 
                 model.Series.Add(barSeries);

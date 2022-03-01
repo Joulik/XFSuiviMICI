@@ -29,11 +29,18 @@
                    Keyboard="Numeric"
                    Text="{Binding SelectedLabWork.TestValue}"/>
 
-            <Entry x:Name="testUnit"
+            <!--<Entry x:Name="testUnit"
                    Margin="25,0,0,0"
                    FontSize="Large"
-                   Placeholder="Ex. mg/l, μg/l..."
-                   Text="{Binding SelectedLabWork.TestUnit}"/>
+                   Text="{Binding SelectedLabWork.TestUnit}"/>-->
+
+            <Picker x:Name="testUnitPicker"
+                    Margin="25,0,0,0"
+                    SelectedItem="{Binding SelectedLabWork.TestUnit}"
+                    >
+                
+                <!--x:Name="testUnit"-->
+            </Picker>
 
             <Button Text="Sauvegarder modifications"
                     x:Name="updateLabWorkButton"

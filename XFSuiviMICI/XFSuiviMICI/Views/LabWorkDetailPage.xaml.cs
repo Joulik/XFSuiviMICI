@@ -28,7 +28,10 @@ namespace XFSuiviMICI
             dateLabWorkPicked.Date = selectedLabWork.DateLabWork;
             testName.Text = selectedLabWork.TestName;
             testValue.Text =  selectedLabWork.TestValue.ToString();
-            testUnit.Text = selectedLabWork.TestUnit;
+            testUnitPicker.SelectedItem = selectedLabWork.TestUnit;
+            
+            var testUnits = (Resources["vm"] as LabWorkDetailVM).GetTestUnit();
+            testUnitPicker.ItemsSource = testUnits;
         }
     }
 }
