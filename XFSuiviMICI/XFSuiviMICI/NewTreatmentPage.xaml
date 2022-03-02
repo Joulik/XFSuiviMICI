@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XFSuiviMICI.ViewModels"
+             x:Class="XFSuiviMICI.NewTreatmentPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:NewTreatmentVM x:Key="vm"/>
+        </ResourceDictionary>    
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout BindingContext="{StaticResource vm}">
+
+            <!--Medication name-->
+            <Label Text="Médicament"
+                   Margin="25,25,0,0"
+                   FontSize="Large"/>
+            <Editor x:Name="medication"
+                   Margin="25,0,0,0"
+                   FontSize="Medium"
+                   Placeholder="Ex. Azathioprine 50mg 3x/jour, Prednisone 60mg..."
+                   Text="{Binding MedicationName}"/>
+
+            <!--Start Date-->
+            <Label Text="Médicament commencé le"
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
+            <DatePicker x:Name="startDateTreatmentPicked"
+                        Format="dd/MM/yyyy"
+                        FontSize="Large"
+                        Margin="30,0,0,0"
+                        Date="{Binding StartDate}"/>
+            
+            <!--Active-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Traitement en cours"
+                       Margin="25,0,0,0"
+                       FontSize="Large"/>
+                <Switch x:Name="switchActiveTreatment"
+                        OnColor="#ff6866"
+                        Margin="15,3,0,0"
+                        IsToggled="{Binding MedicationNotActive}"
+                        Toggled="SwitchActiveTreatmentToggled"/>
+                <Label x:Name="labelActiveTreatment"
+                       Text="oui"
+                       Margin="0,7,0,0"/>
+            </StackLayout>
+
+            <!--Save Button-->
+            <Button Margin="0,25,0,10"
+                        Text="Enregistrer"
+                        FontSize="Medium"
+                        VerticalOptions="End"
+                        Command="{Binding SaveCommand}"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

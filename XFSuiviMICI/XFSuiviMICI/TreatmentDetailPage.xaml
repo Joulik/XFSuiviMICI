@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XFSuiviMICI.ViewModels"
+             x:Class="XFSuiviMICI.TreatmentDetailPage">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:TreatmentDetailVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout BindingContext="{StaticResource vm}">
+            <!--Medication name-->
+            <Label Text="Médicament"
+                   Margin="25,25,0,0"
+                   FontSize="Large"/>
+            <Editor x:Name="medication"
+                   Margin="25,0,0,0"
+                   FontSize="Medium"
+                   Placeholder="Ex. Azathioprine 50mg 3x/jour, Prednisone 60mg..."
+                   Text="{Binding SelectedTreatment.MedicationName}"/>
+
+            <!--Start Date-->
+            <Label Text="Médicament commencé le"
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
+            <DatePicker x:Name="startDateTreatmentPicked"
+                        Format="dd/MM/yyyy"
+                        FontSize="Large"
+                        Margin="30,0,0,0"
+                        Date="{Binding SelectedTreatment.StartDate}"/>
+
+            <!--Active-->
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Traitement en cours"
+                       Margin="25,0,0,0"
+                       FontSize="Large"/>
+                <Switch x:Name="switchActiveTreatment"
+                        OnColor="#ff6868"
+                        Margin="15,3,0,0"
+                        IsToggled="{Binding SelectedTreatment.MedicationNotActive}"
+                        Toggled="SwitchActiveTreatmentToggled"/>
+                <Label x:Name="labelActiveTreatment"
+                       Text="oui"
+                       Margin="0,7,0,0"/>
+            </StackLayout>
+            
+            <Button Text="Sauvegarder modifications"
+                        x:Name="updateTreatmentButton"
+                        Command="{Binding Source={StaticResource vm}, Path=UpdateCommand}"/>
+
+            <Button Text="Effacer"
+                        x:Name="deleteTreatmentButton"
+                        Command="{Binding Source={StaticResource vm}, Path=DeleteCommand}" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

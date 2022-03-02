@@ -1,12 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:XFSuiviMICI.ViewModels"
              x:Class="XFSuiviMICI.TreatmentPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <vm:TreatmentVM x:Key="vm"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Traitements"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+
+        <Grid>
+            <ListView x:Name="treatmentListView"
+                      BindingContext="{StaticResource vm}"
+                      ItemsSource="{Binding Treatments}"
+                      HasUnevenRows="True"
+                      SelectedItem="{Binding SelectedTreatment}">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame CornerRadius="10"
+                                       HasShadow="True"
+                                       OutlineColor="DarkGray"
+                                       Padding="8">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/>
+                                            <RowDefinition Height="Auto"/>
+                                        </Grid.RowDefinitions>
+
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Row="0"
+                                               Grid.Column="0"
+                                               Margin="20,0,0,0"
+                                               FontSize="Large"
+                                               LineBreakMode="WordWrap"
+                                               Text="{Binding MedicationName}"/>
+
+                                        <Label Grid.Row="1"
+                                               Grid.Column="0"
+                                               Margin="20,0,0,0"
+                                               FontSize="Medium"
+                                               Text="{Binding MedicationNotActive}"/>
+
+                                        <Label Grid.Row="1"
+                                               Grid.Column="1"
+                                               FontSize="Medium"
+                                               Text="{Binding StartDate, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+
+                                    </Grid>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+
+            <Image Grid.Column="0" Grid.Row="0"
+                   Source="add_green.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="EndAndExpand"
+                   Margin="0,0,0,0"
+                   HeightRequest="96"
+                   WidthRequest="96"
+                   BindingContext="{StaticResource vm}">
+
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ClickNewTreatmentCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>
