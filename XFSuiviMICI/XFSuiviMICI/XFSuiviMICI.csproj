@@ -18,10 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="NewTreatmentPage.xaml">
+    <EmbeddedResource Update="Views\NewTreatmentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TreatmentDetailPage.xaml">
+    <EmbeddedResource Update="Views\TreatmentDetailPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\DailyReportDetailPage.xaml">
@@ -42,7 +42,7 @@
     <EmbeddedResource Update="Views\NewLabWorkPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="TreatmentPage.xaml">
+    <EmbeddedResource Update="Views\TreatmentPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\TrendPage.xaml">
