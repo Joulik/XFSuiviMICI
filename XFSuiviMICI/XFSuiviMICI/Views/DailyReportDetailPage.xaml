@@ -28,7 +28,7 @@
                        Margin="25,0,0,0"
                        FontSize="Large"/>
                 <Entry x:Name="weight"
-                       Keyboard="Numeric"
+                       Keyboard="Telephone"
                        Margin="25,0,0,0"
                        FontSize="Large"
                        Text="{Binding SelectedDailyReport.Weight}"/>

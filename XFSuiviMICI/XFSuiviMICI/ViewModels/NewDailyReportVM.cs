@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using Xamarin.Forms;
 using XFSuiviMICI.Models;
@@ -34,6 +35,9 @@ namespace XFSuiviMICI.ViewModels
 
         private void Save()
         {
+            var ci = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            ci.NumberFormat.NumberDecimalSeparator = ".";
+
             DailyReport dailyReport = new DailyReport
             {
                 BloodOrMucus = BloodOrMucus,
@@ -45,7 +49,7 @@ namespace XFSuiviMICI.ViewModels
                 HeartRate = int.Parse(HeartRate),
                 Systolic = int.Parse(Systolic),
                 Tiredness = Tiredness,
-                Weight = int.Parse(Weight),
+                Weight = float.Parse(Weight, ci),
             };
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))

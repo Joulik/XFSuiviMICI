@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +23,7 @@ namespace XFSuiviMICI
             (Resources["vm"] as DailyReportDetailVM).SelectedDailyReport = selectedDailyReport;
 
             dateDaiylReportPicked.Date = selectedDailyReport.DateDailyReport;
-            weight.Text = selectedDailyReport.Weight.ToString();
+            weight.Text = selectedDailyReport.Weight.ToString(CultureInfo.InvariantCulture);
             countBowelMovement.Text = selectedDailyReport.BowelMovement.ToString();
             switchDiarrhea.IsToggled = selectedDailyReport.Diarrhea;
             switchBloodMucus.IsToggled = selectedDailyReport.BloodOrMucus;
