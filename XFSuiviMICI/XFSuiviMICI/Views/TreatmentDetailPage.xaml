@@ -23,7 +23,7 @@
                    Text="{Binding SelectedTreatment.MedicationName}"/>
 
             <!--Start Date-->
-            <Label Text="Médicament commencé le"
+            <Label Text="Taritement débuté le"
                    Margin="25,0,0,0"
                    FontSize="Large"/>
             <DatePicker x:Name="startDateTreatmentPicked"

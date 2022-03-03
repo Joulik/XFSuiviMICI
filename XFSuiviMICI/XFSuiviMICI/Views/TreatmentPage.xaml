@@ -2,11 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:XFSuiviMICI.ViewModels"
+             xmlns:Helpers="clr-namespace:XFSuiviMICI.Helpers"
              x:Class="XFSuiviMICI.TreatmentPage">
     
     <ContentPage.Resources>
         <ResourceDictionary>
             <vm:TreatmentVM x:Key="vm"/>
+            <Helpers:TreatmentBoolToStringConverter x:Key="boolToStringConverter"/>
+            <Helpers:TreatmentBoolToBoolConverter x:Key="boolToBoolConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -49,12 +52,16 @@
                                                Grid.Column="0"
                                                Margin="20,0,0,0"
                                                FontSize="Medium"
-                                               Text="{Binding MedicationNotActive}"/>
+                                               Text="{Binding MedicationNotActive,
+                                                Converter={StaticResource boolToStringConverter}}"
+                                               />
 
                                         <Label Grid.Row="1"
                                                Grid.Column="1"
                                                FontSize="Medium"
-                                               Text="{Binding StartDate, StringFormat='{}{0:dd/MM/yyyy}'}"/>
+                                               Text="{Binding StartDate, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                               IsVisible="{Binding MedicationNotActive,
+                                               Converter={StaticResource boolToBoolConverter}}"/>
 
                                     </Grid>
                                 </Frame>
