@@ -2,11 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:XFSuiviMICI.ViewModels"
+             xmlns:local="clr-namespace:XFSuiviMICI.Helpers"
              x:Class="XFSuiviMICI.DailyReportDetailPage">
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <vm:DailyReportDetailVM x:Key="vm" />
+            <local:NullableIntConverter x:Key="NullableIntConverter" />
+            <local:NullableFloatConverter x:Key="NullableFloatConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     
@@ -31,7 +34,7 @@
                        Keyboard="Telephone"
                        Margin="25,0,0,0"
                        FontSize="Large"
-                       Text="{Binding SelectedDailyReport.Weight}"/>
+                       Text="{Binding SelectedDailyReport.Weight, Converter={StaticResource NullableFloatConverter}}"/>
 
                 <!--BowelMouvement-->
                 <StackLayout Orientation="Horizontal">
@@ -123,7 +126,7 @@
                        Keyboard="Numeric"
                        Margin="25,0,0,0"
                        FontSize="Large"
-                       Text="{Binding SelectedDailyReport.HeartRate}"/>
+                       Text="{Binding SelectedDailyReport.HeartRate, Converter={StaticResource NullableIntConverter}}"/>
 
                 <!--Systolic-->
                 <Label Text="Pression systolique (mmHg)"
@@ -133,7 +136,7 @@
                        Keyboard="Numeric"
                        Margin="25,0,0,0"
                        FontSize="Large"
-                       Text="{Binding SelectedDailyReport.Systolic}"/>
+                       Text="{Binding SelectedDailyReport.Systolic, Converter={StaticResource NullableIntConverter}}"/>
 
                 <!--Diastolic-->
                 <Label Text="Pression diastolique (mmHg)"
@@ -143,7 +146,7 @@
                        Keyboard="Numeric"
                        Margin="25,0,0,0"
                        FontSize="Large"
-                       Text="{Binding SelectedDailyReport.Diastolic}"/>
+                       Text="{Binding SelectedDailyReport.Diastolic, Converter={StaticResource NullableIntConverter}}"/>
 
                 <Button Text="Sauvegarder modifications"
                         x:Name="updateDailyReportButton"

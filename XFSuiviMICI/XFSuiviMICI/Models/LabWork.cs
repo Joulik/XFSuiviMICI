@@ -13,6 +13,5 @@ namespace XFSuiviMICI.Models
         public string TestName { get; set; }
         public float TestValue { get; set; }
         public string TestUnit { get; set; }
-
     }
 }

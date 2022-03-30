@@ -23,7 +23,8 @@ namespace XFSuiviMICI
             (Resources["vm"] as DailyReportDetailVM).SelectedDailyReport = selectedDailyReport;
 
             dateDaiylReportPicked.Date = selectedDailyReport.DateDailyReport;
-            weight.Text = selectedDailyReport.Weight.ToString(CultureInfo.InvariantCulture);
+
+            weight.Text = selectedDailyReport.Weight.ToString();
             countBowelMovement.Text = selectedDailyReport.BowelMovement.ToString();
             switchDiarrhea.IsToggled = selectedDailyReport.Diarrhea;
             switchBloodMucus.IsToggled = selectedDailyReport.BloodOrMucus;

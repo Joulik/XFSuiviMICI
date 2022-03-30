@@ -14,13 +14,13 @@ namespace XFSuiviMICI.ViewModels
         public bool BloodOrMucus { get; set; }
         public int BowelMovement { get; set; }
         public DateTime DateDailyReport { get; set; }
-        public string Diastolic { get; set; }
+        public int? Diastolic { get; set; }
         public bool AbdominalPain { get; set; }
         public bool Diarrhea { get; set; }
-        public string HeartRate { get; set; }
-        public string Systolic { get; set; }
+        public int? HeartRate { get; set; }
+        public int? Systolic { get; set; }
         public bool Tiredness { get; set; }
-        public string Weight { get; set; }
+        public float? Weight { get; set; }
 
         public NewDailyReportVM()
         {
@@ -43,13 +43,13 @@ namespace XFSuiviMICI.ViewModels
                 BloodOrMucus = BloodOrMucus,
                 BowelMovement = BowelMovement, //int.Parse(BowelMovement),
                 DateDailyReport = DateDailyReport,
-                Diastolic = int.Parse(Diastolic),
+                Diastolic = Diastolic,
                 AbdominalPain = AbdominalPain,
                 Diarrhea = Diarrhea,
-                HeartRate = int.Parse(HeartRate),
-                Systolic = int.Parse(Systolic),
+                HeartRate = HeartRate,
+                Systolic = Systolic,
                 Tiredness = Tiredness,
-                Weight = float.Parse(Weight, ci),
+                Weight = Weight,
             };
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
