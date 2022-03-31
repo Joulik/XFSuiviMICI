@@ -53,7 +53,7 @@ namespace XFSuiviMICI.ViewModels
             };
 
             using (SQLiteConnection conn = new SQLiteConnection(App.DatabaseLocation))
-            {
+            { 
                 conn.CreateTable<DailyReport>();
                 int rows = conn.Insert(dailyReport);
                 conn.Close();

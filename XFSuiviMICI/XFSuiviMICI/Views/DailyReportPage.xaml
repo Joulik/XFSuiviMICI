@@ -10,6 +10,7 @@
             <vm:DailyReportVM x:Key="vm"/>
             <local:IntBoolConverter x:Key="IntBoolConverter"/>
             <local:FloatToBoolConverter x:Key="FloatToBoolConverter"/>
+            <local:MultiTriggerConverter x:Key="dataHasBeenEntered"/>
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -82,16 +83,33 @@
 
                                         <Label Grid.Row="2"
                                            Grid.Column="1"
-                                           FontSize="Medium">
+                                           FontSize="Medium"
+                                               IsVisible="false">
                                             <Label.FormattedText>
                                                 <FormattedString>
                                                     <Span Text="{Binding Systolic}"/>
-                                                    <Span Text=" /"/>
+                                                    <Span Text=" / "/>
+                                                    <Span Text="{Binding Diastolic}"/>
+                                                    <Span Text=" mmHg"/>
                                                 </FormattedString>
                                             </Label.FormattedText>
+                                            <Label.Triggers>
+                                                <MultiTrigger TargetType="Label">
+                                                    <MultiTrigger.Conditions>
+                                                        <BindingCondition Binding="{Binding Systolic,
+                                                            Converter={StaticResource dataHasBeenEntered}}" 
+                                                                          Value="true"/>
+                                                        <BindingCondition Binding="{Binding Diastolic,
+                                                            Converter={StaticResource dataHasBeenEntered}}"
+                                                                          Value="true"/>
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="IsVisible"
+                                                            Value="true"/>
+                                                </MultiTrigger>
+                                            </Label.Triggers>
                                         </Label>
 
-                                        <Label Grid.Row="2"
+                                        <!--<Label Grid.Row="2"
                                            Grid.Column="2"
                                            FontSize="Medium">
                                             <Label.FormattedText>
@@ -100,7 +118,7 @@
                                                     <Span Text=" mmHg"/>
                                                 </FormattedString>
                                             </Label.FormattedText>
-                                        </Label>
+                                        </Label>-->
                                     </Grid>
                                 </Frame>
                             </ViewCell.View>
