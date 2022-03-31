@@ -13,6 +13,8 @@ namespace XFSuiviMICI
         public MainPage()
         {
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
