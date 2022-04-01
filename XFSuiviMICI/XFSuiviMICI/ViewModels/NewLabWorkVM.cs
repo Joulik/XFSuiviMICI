@@ -21,6 +21,9 @@ namespace XFSuiviMICI.ViewModels
         {
             DateLabWork = DateTime.Now;
             SaveCommand = new Command(Save);
+            TestName = "";
+            TestValue = "";
+            TestUnit = "";
         }
 
         private void Save()

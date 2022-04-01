@@ -29,7 +29,7 @@ namespace XFSuiviMICI
             testName.Text = selectedLabWork.TestName;
             testValue.Text =  selectedLabWork.TestValue.ToString();
             testUnitPicker.SelectedItem = selectedLabWork.TestUnit;
-            
+
             var testUnits = (Resources["vm"] as LabWorkDetailVM).GetTestUnit();
             testUnitPicker.ItemsSource = testUnits;
         }
