@@ -13,38 +13,47 @@
     <ContentPage.Content>
         <StackLayout BindingContext="{StaticResource vm}">
 
+            <!--Date-->
+            <Label Text="Date"
+                   Margin="25,0,0,0"
+                   FontSize="Large"/>
             <DatePicker x:Name="dateLabWorkPicked"
                         Format="dd/MM/yyyy"
                         FontSize="Large"
                         Margin="30,0,0,0"
                         Date="{Binding SelectedLabWork.DateLabWork, StringFormat='{}{0:dd/MM/yyyy}'}" />
-
+            
+            <!--Test Name-->
+            <Label Text="Substance testée"
+                   Margin="25,25,0,0"
+                   FontSize="Large"/>
             <Entry x:Name="testName"
                    Margin="25,0,0,0"
                    Text="{Binding SelectedLabWork.TestName}"/>
 
+            <!--Test Value-->
+            <Label Text="Valeur"
+                   Margin="25,25,0,0"
+                   FontSize="Large"/>
             <Entry x:Name="testValue"
                    Margin="25,0,0,0"
                    FontSize="Large"
                    Keyboard="Numeric"
                    Text="{Binding SelectedLabWork.TestValue}"/>
 
-            <!--<Entry x:Name="testUnit"
-                   Margin="25,0,0,0"
-                   FontSize="Large"
-                   Text="{Binding SelectedLabWork.TestUnit}"/>-->
-
+            <!--Test Unit-->
+            <Label Text="Unité du dosage"
+                   Margin="25,25,0,0"
+                   FontSize="Large"/>
             <Picker x:Name="testUnitPicker"
                     Margin="25,0,0,0"
-                    SelectedItem="{Binding SelectedLabWork.TestUnit}"
-                    >
-                
-                <!--x:Name="testUnit"-->
-            </Picker>
+                    SelectedItem="{Binding SelectedLabWork.TestUnit}"/>
 
             <Button Text="Sauvegarder modifications"
                     x:Name="updateLabWorkButton"
-                    Command="{Binding Source={StaticResource vm}, Path=UpdateCommand}"/>
+                    Command="{Binding Source={StaticResource vm}, Path=UpdateCommand}"
+                    />
+            <!--IsEnabled="False"-->
 
             <Button Text="Effacer"
                     x:Name="deleteLabWorkButton"
